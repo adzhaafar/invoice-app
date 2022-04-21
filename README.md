@@ -17,3 +17,5 @@ The idea was taken from FrontendMentor.
 - home page (see all invoices, filter, create a new invoice)
 - create a new invoice page
 - each invoice => invoice page (see invoice details (edit, delete, mark as paid))
+
+API endpoints
