@@ -18,4 +18,12 @@ The idea was taken from FrontendMentor.
 - create a new invoice page
 - each invoice => invoice page (see invoice details (edit, delete, mark as paid))
 
-API endpoints
+**API endpoints**
+
+- create a new invoice => app.post('/api/v1/invoices')
+- get single invoice => app.get('/api/v1/invoices/:id')
+- delete an invoice => app.delete('/api/v1/invoices/:id')
+- update invoice => app.patch('api/v1/invoices/:id)
+- get all invoices('/api/v1/invoices')
+
+* look at mark as completed feature
