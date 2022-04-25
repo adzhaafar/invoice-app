@@ -9,7 +9,7 @@
     "tailwindcss": "^3.0.24"
   },
   "scripts": {
-    "nodeStart": "node server.js",
+    "nodeStart": "nodemon server.js",
     "start": "react-scripts start"
   }
 }
