@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { modelName } = require('./invoice');
+const { Invoice } = require('./invoice');
 const { Schema, model } = mongoose;
 
 
@@ -13,7 +13,7 @@ const adressSchema = new Schema({
         required: true 
     },
     postalCode: {
-        type: Number, 
+        type: String, 
         required: true
     }
 })

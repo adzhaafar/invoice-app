@@ -41,19 +41,18 @@ const invoiceSchema = new Schema({
             type: Number, 
             required: true
         },
-    price: {
-        type: Number, 
-        required: true
+        price: {
+            type: String, 
+            required: true
     },
-    status: {
-        type: String, 
-        enum: [draft, paid, pending]
+        status: {
+            type: String, 
+            enum: ['draft', 'paid', 'pending']
     }              
     }
-    // code (unique id, but trimmed and with a hash)
+    // code (unique id, but trimmed and with a hash), add data validation
 
 })
-// add data validation
 
 // create and import a model 
 module.exports = mongoose.model('Invoice', invoiceSchema)
