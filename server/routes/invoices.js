@@ -7,7 +7,6 @@ const router = express.Router();
 // import invoice model
 const Invoice = require('../models/invoice');
 
-
 // get all invoices
 router.get('/', async (req, res) => {
     try {
@@ -15,6 +14,7 @@ router.get('/', async (req, res) => {
         res.status(200).json({invoices})
     } catch (error) {
         res.status(500).json({message: error})
+
     }
 })
 
@@ -45,23 +45,21 @@ router.get('/:invoiceId', async(req, res) => {
 // update single invoice
 router.patch('/:invoiceId', async (req, res) => {
     try {   
-        const updateInvoice = await Task.findOneAndUpdate({ _id: req.params.invoiceId }, req.body, {
-            new: true,
-            runValidators: true
+        const updateInvoice = await Invoice.findByIdAndUpdate(req.params.invoiceId, req.body,  {new: true })
+        res.status(200).json({
+            updateInvoice
         })
-        // res.json({ updateInvoice });
-        res.status(200).json({id: req.params.invoiceId, data: req.body})
-            
+        console.log(updateInvoice)
+          
     } catch (error) {
-        res.status(500).json({ message: error });
+        res.status(500).json({ message: error.message });
     }
 })
 
-// update single invoice
 router.delete('/:invoiceId', async (req, res) => {
     try {
         const deleteInvoice = await Invoice.remove({ _id: req.params.invoiceId });
-        res.status(200).json({ deleteInvoice });
+       res.status(200).json({ deleteInvoice });
     } catch (error) {
         res.status(500).json({ message: error });
     }
@@ -70,3 +68,21 @@ router.delete('/:invoiceId', async (req, res) => {
 
 
 module.exports = router;
+
+// //Update by ID Method
+// router.patch('/update/:id', async (req, res) => {
+//     try {
+//         const id = req.params.id;
+//         const updatedData = req.body;
+//         const options = { new: true };
+
+//         const result = await Model.findByIdAndUpdate(
+//             id, updatedData, options
+//         )
+
+//         res.send(result)
+//     }
+//     catch (error) {
+//         res.status(400).json({ message: error.message })
+//     }
+// })
