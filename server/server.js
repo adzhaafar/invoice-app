@@ -11,10 +11,6 @@ mongoose.connect(process.env.DATABASE_URL, () => {
 })
 
 
-// const db = mongoose.connection
-// db.on('error', (error) => console.error(error))
-// db.once('open', () => console.log('Connected to Database'))
-
 
 // use middleware
 app.use(cors());
@@ -29,7 +25,7 @@ app.use('/api/v1/invoices', invoiceRoutes);
 
 
 // port listen
-const port = process.env.PORT || 9000;
+const port = process.env.PORT || 3001;
 app.listen(port, console.log(`server running on port ${port}`));
 
 
