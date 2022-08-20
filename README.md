@@ -27,7 +27,3 @@ The idea was taken from FrontendMentor.
 - update invoice => app.patch('api/v1/invoices/:id)
 - get all invoices('/api/v1/invoices')
 
-* look at mark as completed feature
-=======
-# invoice-app
->>>>>>> main
