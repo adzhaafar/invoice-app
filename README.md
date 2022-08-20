@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # invoice-app
 
 The idea was taken from FrontendMentor.
@@ -27,3 +28,6 @@ The idea was taken from FrontendMentor.
 - get all invoices('/api/v1/invoices')
 
 * look at mark as completed feature
+=======
+# invoice-app
+>>>>>>> main
